@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firenet | اپلیکیشن مدیریت کاربران VPN</title>
+    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        glass: 'rgba(255, 255, 255, 0.05)',
+                        'glass-border': 'rgba(255, 255, 255, 0.1)',
+                        fire: '#ff4b1f',
+                        deep: '#1f1c2c',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f0c29;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* کلاس‌های شیشه‌ای */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #ff4b1f, #ff9068);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* انیمیشن پس زمینه */
+        .blob-bg {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: blob 10s infinite alternate;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col">
+
+    <div class="blob-bg w-72 h-72 bg-purple-600 rounded-full top-0 left-0 mix-blend-multiply opacity-70 animate-blob"></div>
+    <div class="blob-bg w-72 h-72 bg-orange-500 rounded-full top-0 right-0 mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="blob-bg w-72 h-72 bg-pink-600 rounded-full bottom-0 left-20 mix-blend-multiply opacity-70 animate-blob animation-delay-4000"></div>
+
+    <nav class="w-full z-50 glass-panel border-b border-white/10 sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">🔥 Firenet</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 space-x-reverse">
+                        <a href="https://github.com/fireman-dev/Firenet/" class="glass-btn px-4 py-2 rounded-lg text-sm">گیت‌هاب</a>
+                        <a href="https://t.me/firenet_app" class="glass-btn px-4 py-2 rounded-lg text-sm">کانال تلگرام</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <a href="https://github.com/fireman-developer/Firenet/releases/latest" class="text-orange-400 text-sm font-bold">دانلود اپ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-300 text-xs font-bold mb-4 animate-pulse">
+                نسخه ۳.۰.۰ منتشر شد 🎉
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
+                مدیریت کاربران VPN با<br>
+                <span class="gradient-text">قدرت و امنیت Firenet</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-300">
+                پایان دوران لینک‌های کانفیگ! با فایرنت، فقط یوزرنیم و پسورد بدهید.
+                امنیت کامل، محدودیت واقعی و سازگاری با پنل‌های مرزبان و سنایی.
+            </p>
+            
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://github.com/fireman-developer/Firenet/releases/latest" class="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-bold shadow-lg shadow-orange-500/30 transition transform hover:scale-105 flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997zM23.28 8.6749c.8954 0 1.2597.7719 1.2597.7719l-3.3283 5.4883c.8906 1.7061 1.2573 2.9248 1.2573 2.9248-.4804 1.2662-1.3533 2.0592-1.3533 2.0592-1.3657 1.4686-3.8687 2.922-7.1436 3.6547-.6438.1362-2.126.1386-2.6108.1386h-.0096c-.4849 0-1.967-.0024-2.6108-.1386-3.2725-.7327-5.7779-2.1861-7.1436-3.6547 0 0-.8729-.793-1.3533-2.0592 0 0 .3667-1.2187 1.2573-2.9248l-3.3283-5.4883s.3667-.7719 1.2597-.7719c.5631 0 1.5746.2572 2.6596.8407.9626-.4557 2.2285-.8263 3.7317-1.0371l1.795-4.4939c.0743-.2232.2905-.3335.5312-.2592l.9859.349c.2257.0792.359.2905.2896.5336l-1.6366 4.1481c1.2338.084 2.3768.2256 3.4116.4255l1.6366-4.1481c.0694-.2431.2028-.4544.4284-.5336l.9859-.349c.2383-.0743.4569.036.5312.2592l1.795 4.4939c1.5032.2108 2.7691.5814 3.7317 1.0371 1.085-.5835 2.0965-.8407 2.6596-.8407z"/></svg>
+                    دانلود مستقیم اندروید
+                </a>
+                <a href="https://github.com/fireman-dev/Firenet/" class="px-8 py-4 rounded-xl glass-btn text-white font-bold flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    مشاهده در گیت‌هاب
+                </a>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">نسخه ویندوز در حال توسعه است</p>
+        </div>
+
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-16">
+            <div class="glass-panel rounded-2xl p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-purple-500"></div>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-right flex-1">
+                        <h2 class="text-2xl font-bold text-white mb-4">✨ چه چیزی در v3.0.0 جدید است؟</h2>
+                        <ul class="space-y-3 text-gray-300 text-sm sm:text-base">
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                ریدیزاین کامل برنامه با تم گلس‌مورفیسم
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                عبور از ترافیک نیم‌بها (Iran Bypass)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                                رفع باگ لاگ‌اوت و مصرف رم کمتر
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <span class="text-6xl md:text-8xl opacity-20 font-bold">V3.0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+            <h2 class="text-center text-3xl font-bold mb-10">امکانات منحصر به فرد</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2 text-orange-400">امنیت کانفیگ</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        کاربر به کانفیگ دسترسی ندارد. جلوگیری کامل از کپی کردن و پخش شدن کانفیگ‌های شما.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
+                    <div class="text-4xl mb-4">🔗</div>
+                    <h3 class="text-xl font-bold mb-2 text-orange-400">سازگاری با پنل‌ها</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        پشتیبانی کامل از API و لینک ساب پنل‌های مرزبان، مرزنشین و سنایی (3x-ui).
+                    </p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
+                    <div class="text-4xl mb-4">🔔</div>
+                    <h3 class="text-xl font-bold mb-2 text-orange-400">نوتیفیکیشن هوشمند</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ارسال پیام به کاربر خاص یا همه. هشدار خودکار هنگام اتمام حجم یا انقضا.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-2 text-orange-400">مدیریت خودکار</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        لاگ‌اوت خودکار کاربر در صورت عدم فعالیت (۲ روز) و آپدیت خودکار کانفیگ‌ها.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-xl font-bold mb-2 text-orange-400">اوپن سورس</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        کد شفاف و قابل بررسی. بیلد کاملاً امن با استفاده از Github Actions.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl hover:bg-white/5 transition duration-300 flex flex-col justify-center items-center text-center border-orange-500/30">
+                    <h3 class="text-xl font-bold text-white">شروع کنید</h3>
+                    <p class="text-gray-400 text-sm mb-4">همین حالا اپلیکیشن را نصب کنید</p>
+                    <a href="https://github.com/fireman-developer/Firenet/releases/latest" class="text-orange-400 hover:text-orange-300 underline">دانلود مستقیم &larr;</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="glass-panel border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>توسعه داده شده با ❤️ توسط تیم Fireman-Dev</p>
+            <div class="mt-4 flex justify-center space-x-6 space-x-reverse">
+                <a href="https://t.me/ai_ai_developer" class="hover:text-white transition">ارتباط با توسعه‌دهنده</a>
+                <span>|</span>
+                <a href="https://t.me/firenet_app" class="hover:text-white transition">کانال تلگرام</a>
+            </div>
+            <p class="mt-4 text-xs opacity-50">تمامی حقوق برای پروژه Firenet محفوظ است.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
